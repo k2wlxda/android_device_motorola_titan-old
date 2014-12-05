@@ -1,0 +1,4 @@
+# proprietary files for titan
+
+# Sensors
+lib/hw/sensors.MSM8226.so
