@@ -38,3 +38,23 @@ TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 
 # inherit from the proprietary version
 -include vendor/motorola/titan/BoardConfigVendor.mk
+
+#TWRP
+DEVICE_RESOLUTION := 720x1280
+TW_IGNORE_MAJOR_AXIS_0 := true
+TW_EXTERNAL_STORAGE_PATH := "/external_sd"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard1"
+TW_CUSTOM_POWER_BUTTON := 107
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TW_NO_USB_STORAGE := true
+TW_INTERNAL_STORAGE_PATH := "/data/media"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+BOARD_HAS_NO_REAL_SDCARD := true
+RECOVERY_SDCARD_ON_DATA := true
+HAVE_SELINUX := true
+BOARD_RECOVERY_SWIPE := true
+
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
+BOARD_HAS_LARGE_FILESYSTEM := true
+
+PRODUCT_COPY_FILES += device/motorola/titan/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab
