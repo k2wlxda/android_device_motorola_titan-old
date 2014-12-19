@@ -250,6 +250,7 @@ lib/libril.so
 vendor/lib/libnetmgr.so
 vendor/lib/libril-qc-qmi-1.so
 vendor/lib/libril-qcril-hook-oem.so
+vendor/lib/libsubsystem_control.so
 
 # Sensors
 lib/hw/sensors.MSM8226.so
