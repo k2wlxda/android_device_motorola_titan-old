@@ -3,10 +3,11 @@
     "repository": "android_device_qcom_common",
     "target_path": "device/qcom/common"
   },
-/*
   {
-    "repository": "android_kernel_motorola_titan",
+    "remote": "github",
+    "repository": "k2wlxda/kernel-msm",
     "target_path": "kernel/motorola/titan"
+    "revision": "cm-12.0"
   }
-*/
+
 ]
