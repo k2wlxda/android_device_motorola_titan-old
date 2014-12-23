@@ -38,6 +38,7 @@ TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
+TARGET_CPU_SMP := true
 TARGET_CPU_VARIANT := krait
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
@@ -51,6 +52,13 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 TARGET_KERNEL_SOURCE := kernel/motorola/titan
 TARGET_KERNEL_CONFIG := titan_defconfig
 
+WLAN_MODULES:
+        mkdir -p $(KERNEL_MODULES_OUT)/pronto
+        mv $(KERNEL_MODULES_OUT)/wlan.ko $(KERNEL_MODULES_OUT)/pronto/pronto_wlan.ko
+        ln -sf /system/lib/modules/pronto/pronto_wlan.ko $(TARGET_OUT)/lib/modules/wlan.ko
+
+TARGET_KERNEL_MODULES += WLAN_MODULES
+
 # Audio
 AUDIO_FEATURE_DISABLED_ANC_HEADSET := true
 AUDIO_FEATURE_DISABLED_DS1_DOLBY_DDP := true
@@ -62,6 +70,7 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
+QCOM_BT_USE_SMD_TTY := true
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
@@ -77,6 +86,9 @@ USE_OPENGL_RENDERER := true
 # Flags
 BOARD_USES_LEGACY_MMAP := true
 
+# Encryption
+TARGET_HW_DISK_ENCRYPTION := true
+
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
 
@@ -88,6 +100,9 @@ TARGET_PROVIDES_LIBLIGHT := true
 
 # Media
 TARGET_NO_ADAPTIVE_PLAYBACK := true
+
+# Logging
+TARGET_USES_LOGD := false
 
 # Motorola
 TARGET_USES_MOTOROLA_LOG := true
@@ -101,7 +116,7 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1157627904
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 13852606464
 
 # Power HAL
-TARGET_POWERHAL_VARIANT := cm
+TARGET_POWERHAL_VARIANT := qcom
 
 # Qualcomm support
 BOARD_USES_QCOM_HARDWARE := true
