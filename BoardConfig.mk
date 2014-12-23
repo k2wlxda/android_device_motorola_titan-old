@@ -52,7 +52,6 @@ TARGET_KERNEL_SOURCE := kernel/motorola/titan
 TARGET_KERNEL_CONFIG := titan_defconfig
 
 # Audio
-# Audio
 AUDIO_FEATURE_DISABLED_ANC_HEADSET := true
 AUDIO_FEATURE_DISABLED_DS1_DOLBY_DDP := true
 AUDIO_FEATURE_DISABLED_SSR := true
@@ -136,3 +135,6 @@ TARGET_USES_WCNSS_CTRL := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 WIFI_DRIVER_FW_PATH_STA   := "sta"
 WIFI_DRIVER_FW_PATH_AP    := "ap"
+
+# SELinux
+-include device/qcom/sepolicy/sepolicy.mk
