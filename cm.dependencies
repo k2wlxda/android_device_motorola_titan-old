@@ -6,7 +6,7 @@
 /*
   {
     "repository": "android_kernel_motorola_titan",
-    "target_path": "kernel/motorola/test"
+    "target_path": "kernel/motorola/titan"
   }
 */
 ]
