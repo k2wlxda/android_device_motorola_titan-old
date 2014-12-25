@@ -19,6 +19,8 @@
 #define _BDROID_BUILDCFG_H
 
 #define BTM_DEF_LOCAL_NAME   "Moto G 2014"
+
+#define BTA_DISABLE_DELAY 1000 /* in milliseconds */
 #define BLUETOOTH_QCOM_SW TRUE
 // Enables Interleave scan
 #define BTA_HOST_INTERLEAVE_SEARCH  TRUE

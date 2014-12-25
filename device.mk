@@ -27,6 +27,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
+    frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
     frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
@@ -116,8 +117,8 @@ PRODUCT_PACKAGES += \
     copybit.msm8226 \
     gralloc.msm8226 \
     hwcomposer.msm8226 \
-    libgenlock \
-    memtrack.msm8226
+    memtrack.msm8226 \
+    liboverlay 
 
 # Filesystem
 PRODUCT_PACKAGES += \
@@ -151,6 +152,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_ffmpeg.xml:system/etc/media_codecs_ffmpeg.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
@@ -184,7 +186,8 @@ PRODUCT_PACKAGES += \
 
 # QRNGD
 PRODUCT_PACKAGES += \
-    qrngd
+    qrngd \
+    qrngp
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
@@ -232,6 +235,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     dhcpcd.conf \
     hostapd \
+    hostapd.deny \
+    hostapd.accept \
     hostapd_default.conf \
     libwpa_client \
     wpa_supplicant
